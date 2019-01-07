@@ -1,20 +1,23 @@
-Task App Built w/ Laravel and Vue 2
-===
+# Angular - Laravel todo app sample
 
-Link to Medium article: [Build a Task List with Laravel 5.4 and Vue 2](https://medium.com/@connorleech/build-a-task-list-with-laravel-5-4-and-vue-2-9be0bba06801)
+This app demonstrates the use of both Laravel as MVC architecture for php and AngularJS as front-end framework and how these technologies are tied together to make an effortless yet efficient Single Page Application.
 
-![](https://cdn-images-1.medium.com/max/800/1*K4ql54DReAe8bguU0rTXtQ.png)
+## AngularJS
 
-### Todo
+AngularJS is a front-end JavaScript MVC framework created by google. It allows you to build Single-Page Application much faster and utilize a better separation of concerns principle. You can see more details here: https://angularjs.org/
 
-- Admin panel ([tutorial](https://nick-basile.com/blog/post/how-to-build-an-admin-in-laravel-using-tdd))
+## Laravel
 
-- [ ] Add pagination using [hootlex/vuejs-paginator](https://github.com/hootlex/vuejs-paginator) (can also see helpful [laracast episode](https://laracasts.com/series/lets-build-a-forum-with-laravel/episodes/16) for building from scratch)
+Laravel is a back-end framework created for php. This allows us to better build back-end logic by utilizing routes and build RESTful services effortlessly using MVC architecture. 
 
-- [ ] Edit tasks
+## Setup instructions
 
-- [ ] Search tasks
+1. You must install laravel first in your local machine if you don't have one. Follow the instructions here:  https://laravel.com/docs/5.2
+2. Type the command: 'php artisan migrate' to create a database table from Eloquent models. Make sure you check the .env file for your local mysql db setup.
+3. Run the app by typing the command: 'php artisan serve'
 
-- [ ] Task filters
-
-
+## If you have composer
+1. Run 'composer install'
+2. Run 'php artisan key:generate'
+3. Type the command: 'php artisan migrate' to create a database table from Eloquent models. Make sure you check the .env file for your local mysql db setup.
+4. Run the app by typing the command: 'php artisan serve'

@@ -2,16 +2,10 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
-    const ADMIN_TYPE = 'admin';
-    const DEFAULT_TYPE = 'default';
-
     /**
      * The attributes that are mass assignable.
      *
@@ -30,13 +24,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function isAdmin()
+    public function todolists()
     {
-        return $this->type === self::ADMIN_TYPE;
+        return $this->hasMany('App\Todolist');
     }
-
-    public function posts(){
-        return $this->hasMany('App\Post');
-    }
-    
 }

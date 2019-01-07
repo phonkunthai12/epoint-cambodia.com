@@ -1,20 +1,25 @@
 <?php
 
-namespace Tests;
-
-use Laravel\BrowserKitTesting\TestCase as BaseTestCase;
-
-abstract class TestCase extends BaseTestCase
+abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
-    use CreatesApplication;
+    /**
+     * The base URL to use while testing the application.
+     *
+     * @var string
+     */
+    protected $baseUrl = 'http://localhost';
 
-    public $baseUrl = 'http://localhost';
-
-    protected function signIn($user = null)
+    /**
+     * Creates the application.
+     *
+     * @return \Illuminate\Foundation\Application
+     */
+    public function createApplication()
     {
-        // use passed in user or create one
-        $user = $user ?: create('App\User');
-        $this->actingAs($user);
-        return $this;
+        $app = require __DIR__.'/../bootstrap/app.php';
+
+        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+        return $app;
     }
 }
