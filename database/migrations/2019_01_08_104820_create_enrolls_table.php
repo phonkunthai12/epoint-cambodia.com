@@ -20,6 +20,10 @@ class CreateEnrollsTable extends Migration
             $table->foreign('course_id')
             ->references('id')->on('courses')
             ->onDelete('cascade');
+            $table->integer('student_id')->unsigned();
+            $table->foreign('student_id')
+            ->references('id')->on('users')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }
