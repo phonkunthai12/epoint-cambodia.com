@@ -1,7 +1,7 @@
 <?php
 
-namespace App;
 namespace App\Courses;
+
 use Illuminate\Database\Eloquent\Model;
 
 class LessionCourses extends Model
