@@ -20,7 +20,6 @@ class CreateEnrollKeysTable extends Migration
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
             $table->unique(['enroll_key_id', 'course_id']);
-
             $table->foreign('course_id')->references('id')->on('courses')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('enroll_key_id')->references('id')->on('enrolls')

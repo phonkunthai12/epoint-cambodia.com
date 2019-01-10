@@ -15,6 +15,8 @@ class CreateLessionCoursesTable extends Migration
         Schema::create('lession_courses', function (Blueprint $table) {
             $table->string('name');
             $table->text('content');
+            $table->string('status', 25); //free or premuen
+            $table->integer('step');
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')
             ->references('id')->on('courses')
